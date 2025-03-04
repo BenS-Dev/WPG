@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page with iFrame Header and Footer</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script>
+    // This function resizes the iframe based on its content's height.
+    function resizeIframe(iframe) {
+      try {
+        const body = iframe.contentWindow.document.body;
+        const html = iframe.contentWindow.document.documentElement;
+        const height = Math.max(
+          body.scrollHeight, html.scrollHeight,
+          body.offsetHeight, html.offsetHeight
+        );
+        iframe.style.height = height + 'px';
+      } catch (e) {
+        console.error('Error resizing iframe:', e);
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <iframe 
+      src="Header-Footer/header.html" 
+      title="Header" 
+      frameborder="0"
+      onload="resizeIframe(this)">
+      Your browser does not support iframes.
+    </iframe>
+  </header>
+
+  <main>
+    <p>this is a test</p>
+  </main>
+
+  <footer>
+    <iframe 
+      src="Header-Footer/footer.html" 
+      title="Footer" 
+      frameborder="0"
+      onload="resizeIframe(this)">
+      Your browser does not support iframes.
+    </iframe>
+  </footer>
+</body>
+</html>

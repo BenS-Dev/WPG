@@ -1,0 +1,1118 @@
+
+    /* ----------------------------------------------------
+   Google Font Imports (Merged)
+---------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/* ----------------------------------------------------
+   Universal Reset
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------
+   Body (Merged Properties)
+---------------------------------------------------- */
+body {
+  font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;               
+  text-align: center;        
+  background-color: #fff;    
+  overflow-x: hidden;        
+  display: flex;             
+  flex-direction: column;    
+  align-items: center;       
+}
+
+/* ----------------------------------------------------
+   Header
+---------------------------------------------------- */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+/* Logo */
+.header-logo img {
+  height: 40px;
+}
+
+/* ----------------------------------------------------
+   Navigation (Desktop)
+---------------------------------------------------- */
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Hover underline effect */
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #007ACC; /* kept this blue for the underline */
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
+
+/* ----------------------------------------------------
+   Hamburger Toggle (Mobile)
+---------------------------------------------------- */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.hamburger-lines {
+  display: none;
+  height: 24px;
+  width: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+.line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #333;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.line1 {
+  transform-origin: 0% 0%;
+}
+.line3 {
+  transform-origin: 0% 100%;
+}
+
+/* ----------------------------------------------------
+   Responsive Nav
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  .hamburger-lines {
+    display: block;
+  }
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f8f8f8;
+    border-top: 1px solid #ccc;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+  .header-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .header-nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .header-nav a {
+    font-size: 1.1rem;
+  }
+  .menu-toggle-checkbox:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  .menu-toggle-checkbox:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  .menu-toggle-checkbox:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+  .menu-toggle-checkbox:checked ~ .header-nav {
+    max-height: 300px;
+  }
+}
+
+/* ----------------------------------------------------
+   Hero Section
+---------------------------------------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/Happy Family.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;
+  padding: 0 1rem;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------------------------------
+   Buttons (Mind-Blowing)
+---------------------------------------------------- */
+a.mind-blowing-button,
+a.mind-blowing-button:link,
+a.mind-blowing-button:visited,
+a.mind-blowing-button:hover,
+a.mind-blowing-button:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.mind-blowing-button {
+  width: 220px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  /* All standard green = #006733 */
+  background: #006733;
+  border: none;
+  border-radius: 8px;
+  /* Neon glow uses RGBA of #006733 => (0,103,51) */
+  box-shadow: 0 0 10px rgba(0, 103, 51, 0.5),
+              0 0 20px rgba(0, 103, 51, 0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Slower shimmer animation (still #006733 in the radial glow) */
+.mind-blowing-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  transform: rotate(45deg);
+  animation: shimmer 6s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  50% {
+    transform: translate(50%, 50%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+/* Neon glow on hover => same color on the ring, but now we’ll change the BG to #004d25 */
+.mind-blowing-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 103, 51, 0.6),
+              0 0 20px rgba(0, 103, 51, 0.4),
+              0 0 30px rgba(0, 103, 51, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.mind-blowing-button:hover::after {
+  opacity: 1;
+}
+
+/* New hover color */
+.mind-blowing-button:hover {
+  background: #004d25;
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------------
+   About Us Section
+---------------------------------------------------- */
+.about-us-section {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-us-text {
+  flex: 1;
+}
+
+.about-us-text h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.about-us-text p {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.about-us-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-us-section {
+    flex-direction: column;
+  }
+  .about-us-text, .about-us-image {
+    width: 100%;
+    flex: none;
+  }
+}
+
+/* ----------------------------------------------------
+   Services Section
+---------------------------------------------------- */
+/* Main Section: now using a tiled background image */
+.service-section {
+  /* Remove solid background color */
+  /* background-color: #f5f5f5; */
+
+  /* Replace 'images/tiles.png' with your actual tile image path */
+  background: url("images/tiles.png") repeat;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Headings/intro text */
+.service-text h2 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #004d25;
+}
+
+.service-text p {
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Service List Container */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Individual service items (white cards) */
+.service-item {
+  display: flex;               
+  align-items: center;
+  background-color: #f5f5f5;       /* Keep white background for card */
+  border-radius: 2rem;
+  border: 2px solid #004d25;       /* Added defined border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  text-align: left;
+}
+
+
+/* Make icons green using a filter */
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+
+  /* Example filter that yields a green hue; adjust to taste */
+  filter: invert(32%) sepia(76%) saturate(393%) hue-rotate(89deg) brightness(94%) contrast(91%);
+}
+
+/* Content area (heading + paragraph) */
+.service-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004d25;
+}
+
+.service-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Button area */
+.service-action {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .service-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+/* ----------------------------------------------------
+   Card Grid (Team or similar)
+---------------------------------------------------- */
+.grid-2, .grid-4, .grid {
+  margin: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ----------------------------------------------------
+   Backdrop & Expanded
+---------------------------------------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  display: none;
+}
+
+.expanded {
+  display: none;
+  position: fixed;
+  top: 5%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 600px;
+  max-height: 90%;
+  overflow-y: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10;
+}
+
+.expanded img {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.expanded h3 {
+  margin: 20px 0 10px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.expanded p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .expanded {
+    width: 90%;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  .close-btn {
+    display: inline-block;
+  }
+}
+
+/* ----------------------------------------------------
+   Slider Section
+---------------------------------------------------- */
+.slider-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.slider-heading {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.green-bar {
+  width: 200px;
+  height: 4px;
+  /* Main green = #006733 */
+  background-color: #006733;
+  margin: 0.5em 0 3em 0;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  color: #333;
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+/* Arrows: normal (#006733, with some alpha), hover (#004d25) */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  background: rgba(0, 103, 51, 0.1); /* #006733 with alpha */
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.arrow:hover {
+  background: #004d25;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------------------------------------
+   Footer Contact
+---------------------------------------------------- */
+.footer-contact {
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.footer-contact__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-contact__map {
+  margin-right: 2rem;
+  flex: 0 0 auto;
+}
+
+.footer-contact__map iframe {
+  width: 400px;
+  height: 300px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.footer-contact__info {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.footer-contact__info h2 {
+  margin-bottom: 1rem;
+}
+
+.footer-contact__info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact__info li {
+  margin-bottom: 0.75rem;
+}
+
+.phone-link,
+.address-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.phone-link:hover,
+.address-link:hover {
+  color: blue;
+}
+
+.email-link {
+  color: #006733;
+  text-decoration: underline;
+}
+
+.email-link:hover {
+  color: #004d25;
+}
+
+/* Hide map on smaller screens */
+@media (max-width: 768px) {
+  .footer-contact__map {
+    display: none;
+  }
+  .footer-contact__info {
+    text-align: center;
+  }
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  display: block;
+}
+
+/* ----------------------------------------------------
+   Providers / Company Slider
+---------------------------------------------------- */
+.providers {
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.providers-heading h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background-color: #006733;
+  margin: 0 auto 20px auto;
+}
+
+.bx-wrapper {
+  max-width: 1144px;
+  margin: 0 auto;
+  position: relative;
+  border: none !important;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+.bx-viewport {
+  border: none !important;
+  background-color: transparent;
+}
+
+.bxslider {
+  padding: 0;
+}
+
+.bxslider li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bxslider img {
+  width: 160px;
+  height: 80px;
+  object-fit: contain;
+  border: none;
+  background-color: transparent;
+}
+
+/* Normal arrow background (#006733), hover (#004d25) */
+.bx-controls-direction a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #006733;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.bx-controls-direction a.bx-prev {
+  left: -20px;
+}
+
+.bx-controls-direction a.bx-next {
+  right: -20px;
+}
+
+.bx-controls-direction a:hover {
+  background-color: #004d25;
+}
+
+.bx-pager {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.bx-pager-item a {
+  width: 12px;
+  height: 12px;
+  background-color: transparent !important;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bx-pager-item a.active {
+  background-color: #006733 !important;
+  border-color: #006733;
+}
+
+@media (max-width: 768px) {
+  .bxslider img {
+    width: 120px;
+    height: 60px;
+  }
+  .bx-controls-direction a {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+/* ----------------------------------------------------
+   Insurance Cards
+---------------------------------------------------- */
+.insurance-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.insurance-card {
+  flex: 1 1 250px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.icon-wrapper {
+  margin-bottom: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.insurance-card h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.insurance-card p {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.critical-illness-icon {
+  color: #d61f69;
+}
+.disability-icon {
+  color: #2563eb;
+}
+.long-term-care-icon {
+  color: #f59e0b;
+}
+.individual-health-icon {
+  color: #ef4444;
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .insurance-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+    /* ================================
+       Registered Products Section Styles
+       ================================ */
+       .reg-section {
+        padding: 20px;
+      }
+      .reg-section-title {
+        font-size: 2.5em;
+        text-align: center;
+        color: #1A3D7C;
+        margin: 20px 0 40px 0;
+      }
+      .reg-card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+      .reg-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s ease, transform 0.5s ease;
+      }
+      .reg-card:hover {
+        transform: scale(1.05);
+      }
+      .reg-expanded-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        margin: 20px auto;
+        padding: 30px;
+        text-align: left;
+        animation: reg-fadeInExpand 0.5s ease forwards;
+      }
+      @keyframes reg-fadeInExpand {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .reg-fade-out {
+        animation: reg-fadeOutShrink 0.3s ease forwards;
+      }
+      @keyframes reg-fadeOutShrink {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      }
+      .reg-back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #1A3D7C;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        text-align: center;
+      }
+      .reg-back-btn:hover {
+        background-color: #145298;
+      }
+
+
+
+      
+  
+      /* ================================
+         Tax & Estate Planning Section Styles
+         ================================ */
+      .tax-section {
+        padding: 20px;
+      }
+      .tax-section-title {
+        font-size: 2.5em;
+        text-align: center;
+        color: #1A3D7C;
+        margin: 20px 0 40px 0;
+      }
+      .tax-card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+      .tax-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s ease, transform 0.5s ease;
+      }
+      .tax-card:hover {
+        transform: scale(1.05);
+      }
+      .tax-expanded-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        margin: 20px auto;
+        padding: 30px;
+        text-align: left;
+        animation: tax-fadeInExpand 0.5s ease forwards;
+      }
+      @keyframes tax-fadeInExpand {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .tax-fade-out {
+        animation: tax-fadeOutShrink 0.3s ease forwards;
+      }
+      @keyframes tax-fadeOutShrink {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      }
+      .tax-back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #1A3D7C;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        text-align: center;
+      }
+      .tax-back-btn:hover {
+        background-color: #145298;
+      }

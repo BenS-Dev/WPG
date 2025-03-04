@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WPG Wealth Planning Group</title>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styleabout.css" />
+
+  <!-- bxSlider CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" />
+</head>
+<body>
+
+  <!-- =========================================
+       Header (Logo + Navigation)
+  ========================================== -->
+  <header>
+    <div class="header-logo">
+      <img src="images/WPG-Logo.png" alt="WPG Logo"/>
+    </div>
+
+    <!-- Checkbox for toggling mobile menu -->
+    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" />
+    <label for="toggle-menu" class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </label>
+
+    <!-- Navigation -->
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="Tests%20edits/tests-about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================================
+       Testimonial Slider Section
+  ========================================== -->
+  <div class="slider-section">
+    <h3 class="slider-heading">Serving Industry Since 2001</h3>
+    <div class="green-bar"></div>
+    <div class="slider-container">
+      <div class="slides-wrapper" id="slidesWrapper">
+        <!-- Extra dummy slide at the start (for the infinite loop trick) -->
+        <div class="slide">
+          <div>Add text here (Slide 1)</div>
+        </div>
+
+        <!-- Original Slides -->
+        <div class="slide">
+          <div>
+            "Michael and Jason spend the time to get to know you and your current situation and always recommend the best product for your needs, regardless of what company provides it." 
+            <br><br> - Michael &amp; Caroline
+          </div>
+        </div>
+        <div class="slide">
+          <div>
+            "Mike and Jason are always great to deal with! Together, they have a unique way of making insurance and investments easy to understand. They are always friendly and greet you with a smile. If you are looking for trustworthy advisors for good advice on insurance or retirement, I would highly recommend a meeting with Mike and Jason." 
+            <br><br>-Edy &amp; Zorina
+          </div>
+        </div>
+        <div class="slide">
+          <div>
+            "Jason and Mike are experts when it comes to product knowledge and product recommendations. They always make sure that they work with client's interest and that's their priority."
+            <br><br>-Emily
+          </div>
+        </div>
+        <div class="slide">
+          <div>
+            "When I met with Michael and Jason a few years ago, they were able to fix the mess I had from a previous advisor. Thanks to them I am back on track financially."
+            <br><br>-Brian &amp; Barbara
+          </div>
+        </div>
+        <div class="slide">
+          <div>
+            "Michael and Jason spend the time to get to know you and your current situation and always recommend the best product for your needs, regardless of what company provides it." 
+            <br><br>- Michael &amp; Caroline
+          </div>
+        </div>
+
+        <!-- Extra dummy slide at the end (for the infinite loop trick) -->
+        <div class="slide">
+          <div>Add text here (Slide Last)</div>
+        </div>
+      </div>
+      <div class="arrow arrow-left" id="prevArrow">&#10094;</div>
+      <div class="arrow arrow-right" id="nextArrow">&#10095;</div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       Health Insurance Section
+  ========================================== -->
+  <section>
+    <div class="outer-background">
+      <div class="green-box">
+        <h1>Health Insurance</h1>
+        <div class="insurance-container">
+
+          <!-- CRITICAL ILLNESS INSURANCE CARD -->
+          <div class="insurance-card">
+            <div class="icon-wrapper critical-illness-icon">
+              <img src="icons/activity.svg" alt="Critical Illness Icon" />
+            </div>
+            <h2>CRITICAL ILLNESS INSURANCE</h2>
+            <p>
+              Critical illness insurance provides financial support if you are
+              diagnosed with a severe health condition.
+            </p>
+          </div>
+
+          <!-- DISABILITY INSURANCE CARD -->
+          <div class="insurance-card">
+            <div class="icon-wrapper disability-icon">
+              <img src="icons/shield.svg" alt="Disability Insurance Icon" />
+            </div>
+            <h2>DISABILITY INSURANCE</h2>
+            <p>
+              Disability insurance provides financial protection by replacing
+              a portion of your income if you are unable to work due to illness or injury.
+            </p>
+          </div>
+
+          <!-- LONG-TERM CARE INSURANCE CARD -->
+          <div class="insurance-card">
+            <div class="icon-wrapper long-term-care-icon">
+              <img src="icons/home.svg" alt="Long-Term Care Icon" />
+            </div>
+            <h2>LONG-TERM CARE INSURANCE</h2>
+            <p>
+              Long-term care insurance helps cover the costs of care services needed
+              if you are unable to perform daily activities independently due to aging, illness, or disability.
+            </p>
+          </div>
+
+          <!-- INDIVIDUAL HEALTH INSURANCE CARD -->
+          <div class="insurance-card">
+            <div class="icon-wrapper individual-health-icon">
+              <img src="icons/heart.svg" alt="Health Insurance Icon" />
+            </div>
+            <h2>INDIVIDUAL HEALTH INSURANCE</h2>
+            <p>
+              Individual health insurance provides coverage for medical expenses,
+              offering financial protection for healthcare services not covered by government or employer plans.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       Providers Slider Section
+  ========================================== -->
+  <section class="providers">
+    <div class="providers-heading">
+      <h2>Providers We Compare Prices From</h2>
+    </div>
+    <div class="divider"></div>
+
+    <ul class="bxslider">
+      <!-- Slide 1 -->
+      <li>
+        <img src="images/Insurance Company Logo/Assumption Life.gif" alt="Assumption Life">
+        <img src="images/Insurance Company Logo/BMO.gif" alt="BMO">
+        <img src="images/Insurance Company Logo/Canada Life.png" alt="Canada Life">
+        <img src="images/Insurance Company Logo/CPP.jpg" alt="CPP">
+      </li>
+      <!-- Slide 2 -->
+      <li>
+        <img src="images/Insurance Company Logo/Desjardins Insurance.png" alt="Desjardins Insurance">
+        <img src="images/Insurance Company Logo/Empire Life.png" alt="Empire Life">
+        <img src="images/Insurance Company Logo/Equitable Life.gif" alt="Equitable Life">
+        <img src="images/Insurance Company Logo/Faith Life.png" alt="Faith Life">
+      </li>
+      <!-- Slide 3 -->
+      <li>
+        <img src="images/Insurance Company Logo/Forester.gif" alt="Forester">
+        <img src="images/Insurance Company Logo/Humania Assurance.jpeg" alt="Humania Assurance">
+        <img src="images/Insurance Company Logo/Ivari.gif" alt="Ivari">
+        <img src="images/Insurance Company Logo/Manulife.png" alt="Manulife">
+      </li>
+      <!-- Slide 4 -->
+      <li>
+        <img src="images/Insurance Company Logo/RBC Insurance.jpg" alt="RBC Insurance">
+        <img src="images/Insurance Company Logo/SSQ Assurance.png" alt="SSQ Assurance">
+        <img src="images/Insurance Company Logo/Sun Life.png" alt="Sun Life">
+        <img src="images/Insurance Company Logo/Wawanesa Insurance.png" alt="Wawanesa Insurance">
+      </li>
+    </ul>
+  </section>
+<!-- =========================================
+     Registered Products Section
+========================================== -->
+
+  
+
+  <!-- ===============================
+       Registered Products Section
+       =============================== -->
+  <section class="reg-section">
+    <h3 class="reg-section-title" style="color: #006733;">Registered Products</h3>
+    <div class="reg-card-container" id="reg-card-container">
+      <div class="reg-card" onclick="expandRegCard('rrsp')" data-type="rrsp">
+        <h4>Registered Retirement Savings Plan (RRSP)</h4>
+        <p>Tax-deferred growth to help Canadians save for retirement.</p>
+      </div>
+      <div class="reg-card" onclick="expandRegCard('lira')" data-type="lira">
+        <h4>Locked-in Retirement Account (LIRA)</h4>
+        <p>Secure pension funds until retirement.</p>
+      </div>
+      <div class="reg-card" onclick="expandRegCard('rrif')" data-type="rrif">
+        <h4>Registered Retirement Income Fund (RRIF)</h4>
+        <p>Convert RRSPs into a steady income stream during retirement.</p>
+      </div>
+      <div class="reg-card" onclick="expandRegCard('lif')" data-type="lif">
+        <h4>Locked-in Income Fund (LIF)</h4>
+        <p>Annual income with regulated minimum and maximum withdrawals.</p>
+      </div>
+      <div class="reg-card" onclick="expandRegCard('tfsa')" data-type="tfsa">
+        <h4>Tax-Free Savings Account (TFSA)</h4>
+        <p>Grow savings tax-free with flexible contributions and withdrawals.</p>
+      </div>
+    </div>
+    <div id="reg-expanded-container" class="reg-expanded-container" style="display: none;"></div>
+  </section>
+
+  <!-- ===============================
+       Tax & Estate Planning Section
+       =============================== -->
+  <section class="tax-section">
+    <h3 class="tax-section-title" style="color: #006733;">Tax & Estate Planning</h3>
+    <div class="tax-card-container" id="tax-card-container">
+      <div class="tax-card" onclick="expandTaxCard('taxation')" data-type="taxation">
+        <h4>Taxation</h4>
+        <p>Optimal tax strategies tailored to your corporation's structure.</p>
+      </div>
+      <div class="tax-card" onclick="expandTaxCard('tax-planning')" data-type="tax-planning">
+        <h4>Tax Planning</h4>
+        <p>Decrease your taxes with efficient tax avoidance strategies.</p>
+      </div>
+      <div class="tax-card" onclick="expandTaxCard('tax-return')" data-type="tax-return">
+        <h4>Tax Return Preparation</h4>
+        <p>Expert assistance for personal and corporate tax returns.</p>
+      </div>
+      <div class="tax-card" onclick="expandTaxCard('estate')" data-type="estate">
+        <h4>Estate Planning</h4>
+        <p>Plan for asset protection and smooth transfers.</p>
+      </div>
+    </div>
+    <div id="tax-expanded-container" class="tax-expanded-container" style="display: none;"></div>
+  </section>
+
+
+
+  
+  <!-- =========================================
+       FOOTER (Optional)
+  ========================================== -->
+  <!-- Add your footer here if needed -->
+
+
+  <!-- =========================================
+       Scripts
+  ========================================== -->
+  <!-- jQuery & bxSlider JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
+  <!-- Slider Script -->
+  <script src="js/slider.js"></script>
+
+  <!-- Tax & Estate Planning Script -->
+ 
+
+  <!-- Registered Products Script -->
+    <script src="js\Tiles-for-about.js"></script>
+</body>
+</html>

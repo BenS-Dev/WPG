@@ -1,0 +1,19 @@
+{
+  "name": "WPG Wealth Planning Group",
+  "short_name": "WPG Finance",
+  "icons": [
+    {
+      "src": "images/WPG-Logo-Icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/WPG-Logo-Icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#006733",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
