@@ -18,22 +18,19 @@
 </head>
 <body>
   <!-- Site Header (logo + navigation) -->
-  <header style="z-index: 99; position: relative;">
+  <header>
     <!-- Logo -->
     <div class="header-logo">
       <img src="images/WPG-Logo.png" alt="WPG Logo" />
     </div>
-
     <!-- Checkbox for toggling menu -->
-    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" />
-
-    <!-- Hamburger lines (label targets the checkbox above) -->
+    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
+    <!-- Hamburger lines -->
     <label for="toggle-menu" class="hamburger-lines">
       <span class="line line1"></span>
       <span class="line line2"></span>
       <span class="line line3"></span>
     </label>
-
     <!-- Navigation -->
     <nav class="header-nav">
       <ul>
@@ -49,6 +46,9 @@
 
 
 
+  <!-- =========================================
+       FOOTER 
+  ========================================== -->
   <!-- Footer Section -->
   <footer class="footer-contact">
     <div class="footer-contact__wrapper">
@@ -58,12 +58,26 @@
           href="https://www.google.com/maps/place/2-1851+Portage+Ave,+Winnipeg,+MB+R3J+0G8"
           target="_blank"
           rel="noopener noreferrer"
+          title="View our location on Google Maps"
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.907483265251!2d-97.23099838422285!3d49.87904853762717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea715488aafcff%3A0xe1eb15482543ef1d!2s2-1851%20Portage%20Ave%2C%20Winnipeg%2C%20MB%20R3J%200G8%2C%20Canada!5e0!3m2!1sen!2sus!4v1614089584908!5m2!1sen!2sus"
             allowfullscreen
             loading="lazy"
+            title="Google Map of WPG Wealth Planning Group Location"
           ></iframe>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // If the browser does not support lazy-loading on iframes,
+              // remove the 'loading' attribute so the iframe loads normally.
+              if (!('loading' in HTMLIFrameElement.prototype)) {
+                var iframes = document.querySelectorAll('iframe[loading="lazy"]');
+                iframes.forEach(function(iframe) {
+                  iframe.removeAttribute('loading');
+                });
+              }
+            });
+          </script>
         </a>
       </div>
 
