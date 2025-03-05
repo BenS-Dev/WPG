@@ -76,7 +76,7 @@
   </head>
   <body>
     <!-- Site Header (logo + navigation) -->
-    <header>
+    <header id="header" class="show">
       <!-- Logo -->
       <div class="header-logo">
         <img src="images/WPG-Logo.png" alt="WPG Logo" />
@@ -209,18 +209,6 @@
             loading="lazy"
             title="Google Map of WPG Wealth Planning Group Location"
           ></iframe>
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // If the browser does not support lazy-loading on iframes,
-              // remove the 'loading' attribute so the iframe loads normally.
-              if (!('loading' in HTMLIFrameElement.prototype)) {
-                var iframes = document.querySelectorAll('iframe[loading="lazy"]');
-                iframes.forEach(function(iframe) {
-                  iframe.removeAttribute('loading');
-                });
-              }
-            });
-          </script>
         </a>
       </div>
 
@@ -305,5 +293,8 @@
   </ul>
 </div>
 
+<!--Script for Header-Footer-->
+
+<script src="js\header-footer.js"></script>
 </body>
 </html>

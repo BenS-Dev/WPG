@@ -16,6 +16,7 @@
    Body (Merged Properties)
 ---------------------------------------------------- */
 body {
+  padding-top: 60px; /* Adjust this value to match your header's height */
   font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -39,8 +40,17 @@ header {
   background-color: #f8f8f8;
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
-  position: relative;
+  position: fixed; /* Changed from relative to fixed */
+  top: 0;        /* Keeps the header at the top */
+  left: 0;
   z-index: 99;
+  transform: translateY(-100%); /* Initially hide the header offscreen */
+  transition: transform 0.3s ease-in-out; /* Smooth slide effect */
+}
+
+/* Makes the header visible when the "show" class is added */
+header.show {
+  transform: translateY(0);
 }
 
 /* Logo */
@@ -155,6 +165,7 @@ header {
     max-height: 300px;
   }
 }
+
 
 /* ----------------------------------------------------
    Hero Section
@@ -997,7 +1008,7 @@ svg {
   box-sizing: border-box;
 }
 
-/* ================================
+      /* ================================
        Registered Products Section Styles
        ================================ */
 

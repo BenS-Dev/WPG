@@ -9,10 +9,21 @@
 
   <!-- bxSlider CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" />
+
+<!-- Basic favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/WPG-Logo-Icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/WPG-Logo-Icon.png">
+
+<!-- Apple Touch Icon for iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/WPG-Logo-Icon.png">
+
 </head>
 <body>
 
-  <header>
+
+
+  <!-- Site Header (logo + navigation) -->
+  <header id="header" class="show">
     <!-- Logo -->
     <div class="header-logo">
       <img src="images/WPG-Logo.png" alt="WPG Logo" />
@@ -32,6 +43,7 @@
         <li><a href="team.html">Our Team</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="about.html">About Us</a></li>
+        <li><a href="https://www.bpg-plan.com/">BPG</a></li>
       </ul>
     </nav>
   </header>
@@ -294,18 +306,6 @@
             loading="lazy"
             title="Google Map of WPG Wealth Planning Group Location"
           ></iframe>
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // If the browser does not support lazy-loading on iframes,
-              // remove the 'loading' attribute so the iframe loads normally.
-              if (!('loading' in HTMLIFrameElement.prototype)) {
-                var iframes = document.querySelectorAll('iframe[loading="lazy"]');
-                iframes.forEach(function(iframe) {
-                  iframe.removeAttribute('loading');
-                });
-              }
-            });
-          </script>
         </a>
       </div>
 
@@ -355,7 +355,8 @@
   <!-- Slider Script -->
   <script src="js/slider.js"></script>
 
-  <!-- Tax & Estate Planning Script -->
+ <!--Script for Header-Footer-->
+<script src="js\header-footer.js"></script>
  
 
   <!-- Registered Products Script -->

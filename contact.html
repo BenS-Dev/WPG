@@ -15,32 +15,40 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
+  <!-- Basic favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/WPG-Logo-Icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/WPG-Logo-Icon.png">
+
+<!-- Apple Touch Icon for iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/WPG-Logo-Icon.png">
+
 </head>
 <body>
-  <!-- Site Header (logo + navigation) -->
-  <header>
-    <!-- Logo -->
-    <div class="header-logo">
-      <img src="images/WPG-Logo.png" alt="WPG Logo" />
-    </div>
-    <!-- Checkbox for toggling menu -->
-    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
-    <!-- Hamburger lines -->
-    <label for="toggle-menu" class="hamburger-lines">
-      <span class="line line1"></span>
-      <span class="line line2"></span>
-      <span class="line line3"></span>
-    </label>
-    <!-- Navigation -->
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Site Header (logo + navigation) -->
+<header id="header" class="show">
+  <!-- Logo -->
+  <div class="header-logo">
+    <img src="images/WPG-Logo.png" alt="WPG Logo" />
+  </div>
+  <!-- Checkbox for toggling menu -->
+  <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
+  <!-- Hamburger lines -->
+  <label for="toggle-menu" class="hamburger-lines">
+    <span class="line line1"></span>
+    <span class="line line2"></span>
+    <span class="line line3"></span>
+  </label>
+  <!-- Navigation -->
+  <nav class="header-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html">Our Team</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
 
 
 
@@ -66,18 +74,6 @@
             loading="lazy"
             title="Google Map of WPG Wealth Planning Group Location"
           ></iframe>
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // If the browser does not support lazy-loading on iframes,
-              // remove the 'loading' attribute so the iframe loads normally.
-              if (!('loading' in HTMLIFrameElement.prototype)) {
-                var iframes = document.querySelectorAll('iframe[loading="lazy"]');
-                iframes.forEach(function(iframe) {
-                  iframe.removeAttribute('loading');
-                });
-              }
-            });
-          </script>
         </a>
       </div>
 
@@ -114,5 +110,10 @@
       </div>
     </div>
   </footer>
+
+
+  <!--Script for Header-Footer-->
+<script src="js\header-footer.js"></script>
+
 </body>
 </html>
