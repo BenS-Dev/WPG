@@ -1,19 +1,16 @@
 /*Header*/
 
-let lastScroll = window.pageYOffset;
-const header = document.getElementById('header');
-
 window.addEventListener('scroll', function() {
   const currentScroll = window.pageYOffset;
-  if (currentScroll < lastScroll) {
-    // Scrolling up: show the header
+  // Always show header when at the very top
+  if (currentScroll <= 0 || currentScroll < lastScroll) {
     header.classList.add('show');
   } else {
-    // Scrolling down: hide the header
     header.classList.remove('show');
   }
   lastScroll = currentScroll;
 });
+
 
 
 
