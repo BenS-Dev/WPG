@@ -40,18 +40,18 @@ header {
   background-color: #f8f8f8;
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
-  position: relative; /* Changed from relative to fixed */
-  top: 0;        /* Keeps the header at the top */
+  position: fixed;
+  top: 0;
   left: 0;
   z-index: 99;
-  transform: translateY(-100%); /* Initially hide the header offscreen */
-  transition: transform 0.3s ease-in-out; /* Smooth slide effect */
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
 }
 
-/* Makes the header visible when the "show" class is added */
 header.show {
   transform: translateY(0);
 }
+
 
 /* Logo */
 .header-logo img {
