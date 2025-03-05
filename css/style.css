@@ -645,9 +645,13 @@ a.mind-blowing-button:active {
 .green-bar {
   width: 200px;
   height: 4px;
-  /* Main green = #006733 */
-  background-color: #006733;
+  background-color: #006733; /* Main green */
   margin: 0.5em 0 3em 0;
+}
+
+/* Fallback text container is hidden by default */
+.slider-text {
+  display: none;
 }
 
 .slider-container {
@@ -681,7 +685,6 @@ a.mind-blowing-button:active {
   height: 100%;
 }
 
-/* Arrows: normal (#006733 with some alpha), hover (#004d25) */
 .arrow {
   position: absolute;
   top: 50%;
@@ -716,7 +719,7 @@ a.mind-blowing-button:active {
 }
 
 /* -----------------------------------------------
-   Responsive Adjustments for Tablet
+   Tablet Adjustments (max-width: 768px)
 ------------------------------------------------ */
 @media (max-width: 768px) {
   .slider-section {
@@ -725,7 +728,7 @@ a.mind-blowing-button:active {
 
   .slider-container {
     max-width: 100%;
-    height: 300px; /* Slightly reduced height for tablets */
+    height: 300px;
   }
 
   .slide {
@@ -749,22 +752,19 @@ a.mind-blowing-button:active {
 }
 
 /* -----------------------------------------------
-   Mobile Adjustments: Remove Slider, Use Text
+   Small Screens (max-width: 600px)
+   Switch from slider to text-based fallback
 ------------------------------------------------ */
-@media (max-width: 480px) {
-  .slider-section {
-    padding: 20px 5px;
-  }
-
-  /* Hide the slider container and its elements */
+@media (max-width: 600px) {
+  /* Hide slider elements */
   .slider-container,
   .slides-wrapper,
   .slide,
   .arrow {
     display: none;
   }
-
-  /* Display text-based fallback */
+  
+  /* Show fallback text */
   .slider-text {
     display: block;
     width: 90%;
@@ -779,6 +779,7 @@ a.mind-blowing-button:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
+
 
 
 /* ----------------------------------------------------
