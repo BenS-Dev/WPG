@@ -681,7 +681,7 @@ a.mind-blowing-button:active {
   height: 100%;
 }
 
-/* Arrows: normal (#006733, with some alpha), hover (#004d25) */
+/* Arrows: normal (#006733 with some alpha), hover (#004d25) */
 .arrow {
   position: absolute;
   top: 50%;
@@ -694,14 +694,13 @@ a.mind-blowing-button:active {
   justify-content: center;
   font-size: 1.8rem;
   color: white;
-  background: rgba(0, 103, 51, 0.1); /* #006733 with alpha */
+  background: rgba(0, 103, 51, 0.1);
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
 
 .arrow-left {
   left: 20px;
@@ -715,6 +714,72 @@ a.mind-blowing-button:active {
   background: #004d25;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* -----------------------------------------------
+   Responsive Adjustments for Tablet
+------------------------------------------------ */
+@media (max-width: 768px) {
+  .slider-section {
+    padding: 30px 10px;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    height: 300px; /* Slightly reduced height for tablets */
+  }
+
+  .slide {
+    font-size: 1.1rem;
+    padding: 1.5em;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
+}
+
+/* -----------------------------------------------
+   Mobile Adjustments: Remove Slider, Use Text
+------------------------------------------------ */
+@media (max-width: 480px) {
+  .slider-section {
+    padding: 20px 5px;
+  }
+
+  /* Hide the slider container and its elements */
+  .slider-container,
+  .slides-wrapper,
+  .slide,
+  .arrow {
+    display: none;
+  }
+
+  /* Display text-based fallback */
+  .slider-text {
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    padding: 1em;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
 
 /* ----------------------------------------------------
    Footer Contact
