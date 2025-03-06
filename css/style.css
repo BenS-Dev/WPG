@@ -17,7 +17,7 @@
 ---------------------------------------------------- */
 body {
   padding-top: 60px; /* Adjust this value to match your header's height */
-  font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', 'Poppins';
   font-size: 1rem;
   line-height: 1.5;
   color: #333;               
@@ -398,7 +398,6 @@ a.mind-blowing-button:active {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  font-family: sans-serif;
   text-align: center;
 }
 
@@ -1017,7 +1016,6 @@ iframe {
 }
 
 .insurance-card h2 {
-  font-family: Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -1027,7 +1025,6 @@ iframe {
 }
 
 .insurance-card p {
-  font-family: Arial, sans-serif;
   font-size: 0.9rem;
   line-height: 1.4;
   color: #555;
@@ -1160,30 +1157,6 @@ svg {
           transform: scale(0.95);
         }
       }
-      .reg-back-btn,
-      .tax-back-btn {
-        display: inline-block;
-        margin-top: 20px;
-        background-color: #1A3D7C;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-        text-align: center;
-      }
-      .reg-back-btn:hover,
-      .tax-back-btn:hover {
-        background-color: #145298;
-      }
-  
-      /* ================================
-         Tax & Estate Planning Section Styles
-         ================================ */
-
-
 
       @keyframes tax-fadeInExpand {
         0% {
@@ -1207,3 +1180,22 @@ svg {
         }
       }
       
+
+
+      .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #006733;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        text-align: center;
+      }
+      .back-btn:hover{
+        background-color: #145298;
+      }
+  

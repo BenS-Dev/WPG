@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cardContainer.classList.remove("reg-fade-out");
   
         expandedContainer.innerHTML = getRegCardContent(cardType) +
-          '<button class="reg-back-btn" style="background-color: #006733; color: white;" onclick="resetRegCards()">Back</button>';
+          '<button class="back-btn" onclick="resetRegCards()">Back</button>';
         expandedContainer.style.display = "block";
       }, 300);
     };
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cardContainer.classList.remove("tax-fade-out");
   
         expandedContainer.innerHTML = getTaxCardContent(cardType) +
-          '<button class="tax-back-btn" style="background-color: #006733; color: white;" onclick="resetTaxCards()">Back</button>';
+          '<button class="back-btn" onclick="resetTaxCards()">Back</button>';
         expandedContainer.style.display = "block";
       }, 300);
     };
