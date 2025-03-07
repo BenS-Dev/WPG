@@ -390,8 +390,6 @@ a.mind-blowing-button:active {
   /* background-color: #f5f5f5; */
 
   /* Replace 'images/tiles.png' with your actual tile image path */
-  background: url("images/tiles.png") repeat;
-
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
