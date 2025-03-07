@@ -1,7 +1,8 @@
 /*Header*/
-
+var lastScroll = 0;
 window.addEventListener('scroll', function() {
   const currentScroll = window.pageYOffset;
+  
   // Always show header when at the very top
   if (currentScroll <= 0 || currentScroll < lastScroll) {
     header.classList.add('show');
