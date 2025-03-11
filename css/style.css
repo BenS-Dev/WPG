@@ -784,7 +784,7 @@ a.mind-blowing-button:active {
 ---------------------------------------------------- */
 .footer-contact {
   width: 100%;
-  background-color: #fff;
+  background-color: #f8f8f8;
   padding: 2rem;
 }
 
@@ -864,6 +864,49 @@ iframe {
   overflow: hidden;
   display: block;
 }
+
+/* Container for all address tiles */
+/* New Addresses Section */
+.footer-addresses {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-addresses h2 {
+  color : #006733; 
+  margin: 20px 0 40px;
+}
+
+/* Container for all address tiles */
+.address-tile-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Base style for each clickable address tile */
+.address-tile {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.address-tile:hover {
+  transform: scale(1.05);
+}
+
+
+
 
 /* ----------------------------------------------------
    Providers / Company Slider
@@ -1194,6 +1237,8 @@ svg {
         text-align: center;
       }
       .back-btn:hover{
-        background-color: #145298;
+        background-color: #004d25;
       }
   
+
+
