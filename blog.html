@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WPG Wealth Planning Group</title>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Font Awesome for icons (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/kN1wC1lZh8aa6R0Pu9zWVrnIzf1jK0Wjs0pSd9/tnilAiDxC2ZrL1C+f1EFi2I0aS+2KZh/jKq9Mg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/WPG-Logo-Icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/WPG-Logo-Icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/WPG-Logo-Icon.png">
+</head>
+<body>
+  <!-- Site Header -->
+  <header id="header" class="show">
+    <div class="header-logo">
+      <img src="images/WPG-Logo.png" alt="WPG Logo" />
+    </div>
+    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
+    <label for="toggle-menu" class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </label>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <h1>Our Blog</h1>
+
+    <!-- Search & Filter -->
+    <div class="search-bar">
+      <!-- Search Icon -->
+      <span class="search-icon">
+        <img src="icons/Search.svg" alt="Search icon" />
+      </span>
+
+      <!-- Search Input -->
+      <input id="search" type="text" placeholder="Search..." />
+
+      <!-- Filter Dropdown -->
+      <div class="filter-dropdown">
+        <button class="filter-btn" aria-label="Filter" data-filter="all">
+          <img src="icons/Filter.svg" alt="Filter icon" />
+        </button>        
+        <div class="filter-options">
+          <div class="filter-option" data-filter="all">All</div>
+          <div class="filter-option" data-filter="sun">Winnipeg Sun</div>
+          <div class="filter-option" data-filter="wpg">WPG</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="blog-container">
+      <!-- Article 1 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/business/silver-when-to-take-canada-pension-plan-a-crucial-decision-for-retirement">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">When to Take Canada Pension Plan: A Crucial Decision for Retirement</h2>
+        <p class="blog-summary">Explore optimal timing for taking your Canada Pension Plan to enhance your retirement planning.</p>
+        <div class="blog-content">
+          <p>This article discusses the optimal timing for taking your Canada Pension Plan and the important factors for retirement planning.</p>
+        </div>
+      </article>
+      <!-- Article 2 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/business/silver-how-to-maximize-your-tfsa-investments">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">How to Maximize Your TFSA Investments</h2>
+        <p class="blog-summary">Discover tips and strategies to get the most out of your TFSA investments.</p>
+        <div class="blog-content">
+          <p>Learn strategies to optimize your TFSA and make the most of your investments.</p>
+        </div>
+      </article>
+      <!-- Article 3 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/business/silver-powerful-tool-available-for-first-time-homebuyers">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">Powerful Tool Available for First-Time Homebuyers</h2>
+        <p class="blog-summary">Learn about an innovative tool designed to simplify the home buying process for newcomers.</p>
+        <div class="blog-content">
+          <p>Discover an innovative tool designed to help first-time homebuyers navigate the market.</p>
+        </div>
+      </article>
+      <!-- Article 4 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/opinion/silver-investors-may-continue-to-view-u-s-market-as-favorable-despite-tariffs">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">Investors May Continue to View U.S. Market as Favorable Despite Tariffs</h2>
+        <p class="blog-summary">Read an opinion on how tariffs are affecting investor sentiment towards the U.S. market.</p>
+        <div class="blog-content">
+          <p>An opinion piece examining investor sentiment towards the U.S. market amid ongoing tariffs.</p>
+        </div>
+      </article>
+      <!-- Article 5 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/opinion/columnists/silver-why-your-teenager-should-file-a-tax-return">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">Why Your Teenager Should File a Tax Return</h2>
+        <p class="blog-summary">Understand the benefits and life lessons behind filing a tax return early.</p>
+        <div class="blog-content">
+          <p>This column explains the benefits and life lessons for teenagers filing a tax return early.</p>
+        </div>
+      </article>
+      <!-- Article 6 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/business/silver-term-life-insurance-vs-mortgage-life-insurance-what-you-need-to-know">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">Term Life Insurance vs Mortgage Life Insurance: What You Need to Know</h2>
+        <p class="blog-summary">Compare the benefits and drawbacks of term life insurance and mortgage life insurance.</p>
+        <div class="blog-content">
+          <p>Compare the pros and cons of term life insurance versus mortgage life insurance for your peace of mind.</p>
+        </div>
+      </article>
+      <!-- Article 7 (from The Sun) -->
+      <article class="blog-card" data-source="sun" data-link="https://winnipegsun.com/opinion/columnists/silver-effective-tax-efficient-charitable-giving-with-donor-advised-funds">
+        <img class="blog-source-logo" src="images/The Winnipeg Sun Icon.png" alt="Winnipeg Sun Logo" />
+        <h2 class="blog-title">Effective Tax-Efficient Charitable Giving with Donor Advised Funds</h2>
+        <p class="blog-summary">Get insights on optimizing your charitable giving through donor advised funds.</p>
+        <div class="blog-content">
+          <p>An insightful look at how donor advised funds can optimize your charitable giving strategies.</p>
+        </div>
+      </article>
+      <!-- Article 8 (Our Articles) -->
+      <article class="blog-card" data-source="wpg">
+        <img class="blog-source-logo" src="images/WPG-Logo-Icon.png" alt="Our Articles Logo" />
+        <h2 class="blog-title">Article Email</h2>
+        <p class="blog-summary">Uncover an interesting fact about the origins of paper money.</p>
+        <div class="blog-content">
+          <p>Fun Fact: The world’s first paper money was created in China over 1,000 years ago, revolutionizing trade and economies worldwide!</p>
+          <button class="blog-back-btn">Back</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Overlay for expanded card effect -->
+  <div class="blog-overlay"></div>
+
+  <!-- Existing blog functionality script -->
+  <script src="js/blog.js"></script>
+</body>
+</html>

@@ -16,17 +16,18 @@
    Body (Merged Properties)
 ---------------------------------------------------- */
 body {
-  padding-top: 60px; /* Adjust this value to match your header's height */
+  padding-top: 60px;
+  /* Adjust this value to match your header's height */
   font-family: 'Montserrat', 'Poppins';
   font-size: 1rem;
   line-height: 1.5;
-  color: #333;               
-  text-align: center;        
-  background-color: #fff;    
-  overflow-x: hidden;        
-  display: flex;             
-  flex-direction: column;    
-  align-items: center;       
+  color: #333;
+  text-align: center;
+  background-color: #fff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ----------------------------------------------------
@@ -82,7 +83,8 @@ header.show {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #007ACC; /* kept this blue for the underline */
+  background: #006733;
+  /* kept this blue for the underline */
   transition: width 0.3s ease;
 }
 
@@ -118,6 +120,7 @@ header.show {
 .line1 {
   transform-origin: 0% 0%;
 }
+
 .line3 {
   transform-origin: 0% 100%;
 }
@@ -129,6 +132,7 @@ header.show {
   .hamburger-lines {
     display: block;
   }
+
   .header-nav {
     position: absolute;
     top: 100%;
@@ -141,27 +145,34 @@ header.show {
     max-height: 0;
     transition: max-height 0.4s ease-in-out;
   }
+
   .header-nav ul {
     flex-direction: column;
     gap: 0;
   }
+
   .header-nav li {
     margin: 10px 0;
     text-align: center;
   }
+
   .header-nav a {
     font-size: 1.1rem;
   }
-  .menu-toggle-checkbox:checked ~ .hamburger-lines .line1 {
+
+  .menu-toggle-checkbox:checked~.hamburger-lines .line1 {
     transform: rotate(45deg);
   }
-  .menu-toggle-checkbox:checked ~ .hamburger-lines .line2 {
+
+  .menu-toggle-checkbox:checked~.hamburger-lines .line2 {
     transform: scaleY(0);
   }
-  .menu-toggle-checkbox:checked ~ .hamburger-lines .line3 {
+
+  .menu-toggle-checkbox:checked~.hamburger-lines .line3 {
     transform: rotate(-45deg);
   }
-  .menu-toggle-checkbox:checked ~ .header-nav {
+
+  .menu-toggle-checkbox:checked~.header-nav {
     max-height: 300px;
   }
 }
@@ -235,7 +246,7 @@ a.mind-blowing-button:active {
   border-radius: 8px;
   /* Neon glow uses RGBA of #006733 => (0,103,51) */
   box-shadow: 0 0 10px rgba(0, 103, 51, 0.5),
-              0 0 20px rgba(0, 103, 51, 0.3);
+    0 0 20px rgba(0, 103, 51, 0.3);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -250,7 +261,7 @@ a.mind-blowing-button:active {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
   transform: rotate(45deg);
   animation: shimmer 6s infinite;
 }
@@ -259,9 +270,11 @@ a.mind-blowing-button:active {
   0% {
     transform: translate(-50%, -50%) rotate(45deg);
   }
+
   50% {
     transform: translate(50%, 50%) rotate(45deg);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(45deg);
   }
@@ -277,8 +290,8 @@ a.mind-blowing-button:active {
   height: 100%;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 103, 51, 0.6),
-              0 0 20px rgba(0, 103, 51, 0.4),
-              0 0 30px rgba(0, 103, 51, 0.2);
+    0 0 20px rgba(0, 103, 51, 0.4),
+    0 0 30px rgba(0, 103, 51, 0.2);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -375,7 +388,9 @@ a.mind-blowing-button:active {
   .about-us-section {
     flex-direction: column;
   }
-  .about-us-text, .about-us-image {
+
+  .about-us-text,
+  .about-us-image {
     width: 100%;
     flex: none;
   }
@@ -422,11 +437,13 @@ a.mind-blowing-button:active {
 
 /* Individual service items (white cards) */
 .service-item {
-  display: flex;               
+  display: flex;
   align-items: center;
-  background-color: #f5f5f5;       /* Keep white background for card */
+  background-color: #f5f5f5;
+  /* Keep white background for card */
   border-radius: 2rem;
-  border: 2px solid #004d25;       /* Added defined border */
+  border: 2px solid #004d25;
+  /* Added defined border */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
   text-align: left;
@@ -471,7 +488,7 @@ a.mind-blowing-button:active {
     text-align: center;
     align-items: center;
   }
-  
+
   .service-icon {
     margin-right: 0;
     margin-bottom: 10px;
@@ -484,7 +501,9 @@ a.mind-blowing-button:active {
 /* ----------------------------------------------------
    Card Grid (Team or similar)
 ---------------------------------------------------- */
-.grid-2, .grid-4, .grid {
+.grid-2,
+.grid-4,
+.grid {
   margin: 20px;
   width: 90%;
   max-width: 1200px;
@@ -509,7 +528,10 @@ a.mind-blowing-button:active {
 }
 
 @media (max-width: 768px) {
-  .grid-2, .grid, .grid-4 {
+
+  .grid-2,
+  .grid,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 }
@@ -618,6 +640,7 @@ a.mind-blowing-button:active {
     padding: 20px;
     font-size: 0.9rem;
   }
+
   .close-btn {
     display: inline-block;
   }
@@ -642,7 +665,8 @@ a.mind-blowing-button:active {
 .green-bar {
   width: 200px;
   height: 4px;
-  background-color: #006733; /* Main green */
+  background-color: #006733;
+  /* Main green */
   margin: 0.5em 0 3em 0;
 }
 
@@ -753,6 +777,7 @@ a.mind-blowing-button:active {
    Switch from slider to text-based fallback
 ------------------------------------------------ */
 @media (max-width: 600px) {
+
   /* Hide slider elements */
   .slider-container,
   .slides-wrapper,
@@ -760,7 +785,7 @@ a.mind-blowing-button:active {
   .arrow {
     display: none;
   }
-  
+
   /* Show fallback text */
   .slider-text {
     display: block;
@@ -853,6 +878,7 @@ a.mind-blowing-button:active {
   .footer-contact__map {
     display: none;
   }
+
   .footer-contact__info {
     text-align: center;
   }
@@ -873,7 +899,7 @@ iframe {
 }
 
 .footer-addresses h2 {
-  color : #006733; 
+  color: #006733;
   margin: 20px 0 40px;
 }
 
@@ -1017,6 +1043,7 @@ iframe {
     width: 120px;
     height: 60px;
   }
+
   .bx-controls-direction a {
     width: 30px;
     height: 30px;
@@ -1038,7 +1065,7 @@ iframe {
   padding: 2rem;
   border: 1px solid #e5e5e5;
   border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
 
@@ -1074,12 +1101,15 @@ iframe {
 .critical-illness-icon {
   color: #d61f69;
 }
+
 .disability-icon {
   color: #2563eb;
 }
+
 .long-term-care-icon {
   color: #f59e0b;
 }
+
 .individual-health-icon {
   color: #ef4444;
 }
@@ -1098,9 +1128,9 @@ svg {
 }
 
 
-  
 
-      /* ================================
+
+/* ================================
             Backround for the Sections
        ================================ */
 
@@ -1108,21 +1138,22 @@ svg {
 #reg-tax-section {
   background-color: #f5f5f5;
   width: 100%;
-  padding: 20px;      /* Adjust padding as needed */
+  padding: 20px;
+  /* Adjust padding as needed */
   box-sizing: border-box;
 }
 
-      /* ================================
+/* ================================
        Registered Products Section Styles
        ================================ */
 
 /* Titles for both sections */
 .reg-section-title,
 .tax-section-title {
-        font-size: 2.5em;
-        text-align: center;
-        color: #006733;
-        margin: 20px 0 40px 0
+  font-size: 2.5em;
+  text-align: center;
+  color: #006733;
+  margin: 20px 0 40px 0
 }
 
 /* Hide expanded containers by default */
@@ -1134,111 +1165,392 @@ svg {
 
 
 
-       .reg-section,
-       .tax-section {
-        padding: 20px;
-      }
+.reg-section,
+.tax-section {
+  padding: 20px;
+}
 
-      .reg-card-container,
-      .tax-card-container  {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        transition: opacity 0.3s ease;
-      }
-      .reg-card,
-      .tax-card {
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        padding: 20px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.5s ease, transform 0.5s ease;
-      }
-      .reg-card:hover,
-      .tax-card:hover {
-        transform: scale(1.05);
-      }
-      .reg-expanded-container,
-      .tax-expanded-container {
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        width: 90%;
-        margin: 20px auto;
-        padding: 30px;
-        text-align: left;
-        animation: reg-fadeInExpand 0.5s ease forwards;
-      }
-      @keyframes reg-fadeInExpand {
-        0% {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      .reg-fade-out,
-      .tax-fade-out {
-        animation: reg-fadeOutShrink 0.3s ease forwards;
-      }
-      @keyframes reg-fadeOutShrink {
-        0% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-      }
+.reg-card-container,
+.tax-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
 
-      @keyframes tax-fadeInExpand {
-        0% {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
+.reg-card,
+.tax-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease, transform 0.5s ease;
+}
 
-      @keyframes tax-fadeOutShrink {
-        0% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-      }
-      
+.reg-card:hover,
+.tax-card:hover {
+  transform: scale(1.05);
+}
+
+.reg-expanded-container,
+.tax-expanded-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: left;
+  animation: reg-fadeInExpand 0.5s ease forwards;
+}
+
+@keyframes reg-fadeInExpand {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reg-fade-out,
+.tax-fade-out {
+  animation: reg-fadeOutShrink 0.3s ease forwards;
+}
+
+@keyframes reg-fadeOutShrink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes tax-fadeInExpand {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tax-fadeOutShrink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
 
 
-      .back-btn {
-        display: inline-block;
-        margin-top: 20px;
-        background-color: #006733;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-        text-align: center;
-      }
-      .back-btn:hover{
-        background-color: #004d25;
-      }
-  
 
+.back-btn,
+.blog-back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #006733;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.back-btn:hover,
+.blog-back-btn:hover {
+  background-color: #004d25;
+}
+
+
+
+
+
+
+
+
+
+/***********************************************
+  Blog Layout
+************************************************/
+/* Container for the entire search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  /* Symmetric padding for centered content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Search icon container */
+.search-icon {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+/* Control the size of the search icon image */
+.search-icon img {
+  width: 24px;
+  /* Increased size */
+  height: 24px;
+  /* Increased size */
+  object-fit: contain;
+}
+
+/* Text input */
+.search-bar input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+  text-align: left;
+}
+
+/* Filter button */
+.filter-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+/* Control the size of the filter icon image */
+.filter-btn img {
+  width: 24px;
+  /* Increased size */
+  height: 24px;
+  /* Increased size */
+  object-fit: contain;
+}
+
+/* Hover/active states for the filter button */
+.filter-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  /* Hidden by default */
+  z-index: 1000;
+}
+
+.filter-options.active {
+  display: block;
+}
+
+.filter-option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.filter-option:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* -------------------------------
+   Blog Section & Container Styles
+---------------------------------- */
+.blog-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.blog-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* -------------------------------
+           Blog Card Styles
+---------------------------------- */
+.blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-source-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.blog-summary {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+/* Hidden detailed content */
+.blog-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+/* -------------------------------
+  Expanded/Collapse Animations & Keyframes
+---------------------------------- */
+.blog-card.blog-expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ccc;
+  animation: blog-pop-fade-in 0.6s forwards;
+}
+
+.blog-card.blog-expanded .blog-content {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 1rem;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+@keyframes blog-pop-fade-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.blog-card.blog-collapsing {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  animation: blog-pop-fade-out 0.3s forwards;
+}
+
+.blog-card.blog-collapsing .blog-content {
+  max-height: 0;
+  opacity: 0;
+  transition: none;
+}
+
+@keyframes blog-pop-fade-out {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Fade-out effect for non-matching cards */
+.blog-card.blog-fade-out {
+  opacity: 0.1;
+  pointer-events: none;
+  filter: grayscale(90%);
+  transition: opacity 0.1s ease, filter 0.1s ease;
+}
+
+/* -------------------------------
+           Overlay & Button
+---------------------------------- */
+.blog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
+}
+
+.blog-overlay.blog-overlay-active {
+  display: block;
+}
 
