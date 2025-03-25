@@ -1510,34 +1510,20 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  animation: blog-pop-fade-out 0.3s forwards;
+  /* Immediately reset background effects */
+  opacity: 1;
+  filter: grayscale(0%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  /* Delay the collapse animation to allow the background to reset */
+  animation: blog-pop-fade-out 0.6s 0.3s forwards;
 }
 
-.blog-card.blog-collapsing .blog-content {
-  max-height: 0;
-  opacity: 0;
-  transition: none;
+/* Override faded background if both classes are present */
+.blog-card.blog-collapsing.blog-fade-out {
+  opacity: 1;
+  filter: grayscale(0%);
 }
 
-@keyframes blog-pop-fade-out {
-  from {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  to {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-  }
-}
-
-/* Fade-out effect for non-matching cards */
-.blog-card.blog-fade-out {
-  opacity: 0.1;
-  pointer-events: none;
-  filter: grayscale(90%);
-  transition: opacity 0.1s ease, filter 0.1s ease;
-}
 
 /* -------------------------------
            Overlay & Button
