@@ -854,14 +854,16 @@ a.mind-blowing-button:active {
 }
 
 .phone-link,
-.address-link {
+.address-link,
+.fax-link {
   color: inherit;
   text-decoration: none;
 }
 
 .phone-link:hover,
-.address-link:hover {
-  color: blue;
+.address-link:hover,
+.fax-link:hover {
+  color: #006733;
 }
 
 .email-link {
@@ -872,6 +874,7 @@ a.mind-blowing-button:active {
 .email-link:hover {
   color: #004d25;
 }
+
 
 /* Hide map on smaller screens */
 @media (max-width: 768px) {
@@ -902,6 +905,25 @@ iframe {
   color: #006733;
   margin: 20px 0 40px;
 }
+
+/* --------------------------------------
+   Footer Copyright Section
+----------------------------------------- */
+/* Footer Copyright Section - Full Bleed */
+.footer-copyright {
+  background-color: #f8f8f8; /* White background */
+  border-top: 1px solid #e5e5e5;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  width: 100%;         /* Let it naturally fill the container width */
+  box-sizing: border-box;
+  margin: 0 auto;      /* Center if needed, or remove if not required */
+}
+
+
+
 
 /* Container for all address tiles */
 .address-tile-container {
