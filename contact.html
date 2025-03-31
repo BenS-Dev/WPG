@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" /> <!-- As requested by Salesforce -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WPG Wealth Planning Group</title>
-  <!-- Single CSS file reference -->
+  <title>Contact Us | WPG Wealth Planning Group</title>
+  
+  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Contact form stylesheet -->
+  <link rel="stylesheet" href="css/contact-form.css" />
 
-  <!-- Font Awesome for icons (CDN) -->
+  <!-- Font Awesome for icons (optional, already in your main site) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -15,54 +19,96 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
-  <!-- Basic favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/WPG-Logo-Icon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/WPG-Logo-Icon.png">
-
-<!-- Apple Touch Icon for iOS -->
-<link rel="apple-touch-icon" sizes="180x180" href="images/WPG-Logo-Icon.png">
+  
+  <!-- Favicon links (optional, already in your main site) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/WPG-Logo-Icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/WPG-Logo-Icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/WPG-Logo-Icon.png">
 
 </head>
 <body>
-<!-- Site Header (logo + navigation) -->
-<header id="header" class="show">
-  <!-- Logo -->
-  <div class="header-logo">
-    <img src="images/WPG-Logo.png" alt="WPG Logo" />
-  </div>
-  <!-- Checkbox for toggling menu -->
-  <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
-  <!-- Hamburger lines -->
-  <label for="toggle-menu" class="hamburger-lines">
-    <span class="line line1"></span>
-    <span class="line line2"></span>
-    <span class="line line3"></span>
-  </label>
-  <!-- Navigation -->
-  <nav class="header-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Our Team</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+  <header id="header" class="show">
+    <!-- Logo -->
+    <div class="header-logo">
+      <img src="images/WPG-Logo.png" alt="WPG Logo" />
+    </div>
+    <!-- Checkbox for toggling menu -->
+    <input type="checkbox" id="toggle-menu" class="menu-toggle-checkbox" aria-label="Toggle navigation" />
+    <!-- Hamburger lines -->
+    <label for="toggle-menu" class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </label>
+    <!-- Navigation -->
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-
-
+  <!-- =========================================
+       MAIN CONTACT CONTENT
+  ========================================== -->
+  <main>
+    <section class="contact-form-section">
+      <h2>Contact Us</h2>
+      
+      <!-- 
+           Salesforce Web-to-Case Form 
+           (centered via .contact-form-section in contact-form.css)
+      -->
+      <form 
+        action="https://wpgthewealthplanninggroup--escheduler.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDH000001ORUm" 
+        method="POST"
+      >
+        <input type="hidden" name="captcha_settings" value='{"keyname":"Website","fallback":"true","orgId":"00DDH000001ORUm","ts":""}'>
+        <input type="hidden" name="orgid" value="00DDH000001ORUm">
+        <input type="hidden" name="retURL" value="http://wpg-plan.com">
+        
+        <!-- Uncomment for debug:
+        <input type="hidden" name="debug" value=1>
+        <input type="hidden" name="debugEmail" value="ben@wpg-plan.com">
+        -->
+        
+        <label for="name">Contact Name</label>
+        <input id="name" maxlength="80" name="name" size="20" type="text" />
+        
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" size="20" type="text" />
+        
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+        
+        <label for="subject">Subject</label>
+        <input id="subject" maxlength="80" name="subject" size="20" type="text" />
+        
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+        
+        <!-- Google reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="6LduwwUrAAAAAEPLrGYSMnsPIM9CHCp5EuNhCt3y"></div><br>
+        
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
 
   <!-- =========================================
        FOOTER 
   ========================================== -->
-  <!-- Footer Section -->
   <footer class="footer-contact">
     <div class="footer-contact__wrapper">
       <!-- Map -->
       <div class="footer-contact__map">
-        <a 
+        <a
           href="https://www.google.com/maps/place/2-1851+Portage+Ave,+Winnipeg,+MB+R3J+0G8"
           target="_blank"
           rel="noopener noreferrer"
@@ -97,10 +143,10 @@
           </li>
           <li>
             <strong>Address:</strong> 
-            <a 
+            <a
               href="https://www.google.com/maps/place/2-1851+Portage+Ave,+Winnipeg,+MB+R3J+0G8"
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               class="address-link"
             >
               2-1851 Portage Avenue, Winnipeg, MB R3J 0G8
@@ -111,9 +157,13 @@
     </div>
   </footer>
 
-
-<!--Script for Header-Footer-->
-<script src="js\Header-Footer.js"></script>
-
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <!-- Header-Footer functionality -->
+  <script src="js/Header-Footer.js"></script>
+  
+  <!-- Our custom Contact Form JavaScript (loads recaptcha, etc.) -->
+  <script src="js/contact-form.js"></script>
 </body>
 </html>
