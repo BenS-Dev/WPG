@@ -310,6 +310,14 @@ a.mind-blowing-button:active {
 /* ----------------------------------------------------
    About Us Section
 ---------------------------------------------------- */
+/* Scoped H1 for About page only */
+.about-page h1 {
+  font-size: 1.5rem;    /* pick whatever matches your design system */
+    line-height: 1.2;
+    font-weight: 700;
+    color: #000;
+    margin: 20px 0 40px;
+}
 
 .about-section {
   position: relative;
@@ -902,7 +910,7 @@ iframe {
 }
 
 .footer-addresses h2 {
-  color: #006733;
+  color: #000;
   margin: 20px 0 40px;
 }
 
@@ -957,121 +965,94 @@ iframe {
 
 
 /* ----------------------------------------------------
-   Providers / Company Slider
+   Providers Grid Section (Modern)
 ---------------------------------------------------- */
 .providers {
-  padding: 40px 20px;
-  width: 100%;
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.providers-heading {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .providers-heading h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #333;
+  margin: 0;
 }
 
 .divider {
-  width: 100px;
+  width: 80px;
   height: 4px;
   background-color: #006733;
-  margin: 0 auto 20px auto;
+  margin: 16px auto 0;
 }
 
-.bx-wrapper {
-  max-width: 1144px;
+.providers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  border: none !important;
-  background-color: transparent;
-  box-shadow: none !important;
-}
-
-.bx-viewport {
-  border: none !important;
-  background-color: transparent;
-}
-
-.bxslider {
+  list-style: none;
   padding: 0;
 }
 
-.bxslider li {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.bxslider img {
-  width: 160px;
-  height: 80px;
-  object-fit: contain;
-  border: none;
-  background-color: transparent;
-}
-
-/* Normal arrow background (#006733), hover (#004d25) */
-.bx-controls-direction a {
+.provider-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: #006733;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.5rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease;
   text-decoration: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
 }
 
-.bx-controls-direction a.bx-prev {
-  left: -20px;
+.provider-card img {
+  width: 140px;
+  height: 70px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: 
+    filter 0.3s ease, 
+    opacity 0.3s ease, 
+    transform 0.3s ease;
 }
 
-.bx-controls-direction a.bx-next {
-  right: -20px;
+.provider-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.bx-controls-direction a:hover {
-  background-color: #004d25;
-}
-
-.bx-pager {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.bx-pager-item a {
-  width: 12px;
-  height: 12px;
-  background-color: transparent !important;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.bx-pager-item a.active {
-  background-color: #006733 !important;
-  border-color: #006733;
+.provider-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .bxslider img {
+  .providers-heading h2 {
+    font-size: 1.75rem;
+  }
+  .provider-card {
+    padding: 16px;
+  }
+  .provider-card img {
     width: 120px;
     height: 60px;
   }
-
-  .bx-controls-direction a {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
-  }
 }
+
+
 
 /* ----------------------------------------------------
    Insurance Cards
@@ -1157,154 +1138,146 @@ svg {
        ================================ */
 
 
-#reg-tax-section {
-  background-color: #f5f5f5;
-  width: 100%;
-  padding: 20px;
-  /* Adjust padding as needed */
-  box-sizing: border-box;
-}
-
-/* ================================
-       Registered Products Section Styles
-       ================================ */
-
-/* Titles for both sections */
-.reg-section-title,
-.tax-section-title {
-  font-size: 2.5em;
-  text-align: center;
-  color: #006733;
-  margin: 20px 0 40px 0
-}
-
-/* Hide expanded containers by default */
-.reg-expanded-container,
-.tax-expanded-container {
-  display: none;
-}
-
-
-
-
-.reg-section,
-.tax-section {
-  padding: 20px;
-}
-
-.reg-card-container,
-.tax-card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  transition: opacity 0.3s ease;
-}
-
-.reg-card,
-.tax-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease, transform 0.5s ease;
-}
-
-.reg-card:hover,
-.tax-card:hover {
-  transform: scale(1.05);
-}
-
-.reg-expanded-container,
-.tax-expanded-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  margin: 20px auto;
-  padding: 30px;
-  text-align: left;
-  animation: reg-fadeInExpand 0.5s ease forwards;
-}
-
-@keyframes reg-fadeInExpand {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.reg-fade-out,
-.tax-fade-out {
-  animation: reg-fadeOutShrink 0.3s ease forwards;
-}
-
-@keyframes reg-fadeOutShrink {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-@keyframes tax-fadeInExpand {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes tax-fadeOutShrink {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-
-
-.back-btn,
-.blog-back-btn {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #006733;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-  text-align: center;
-}
-
-.back-btn:hover,
-.blog-back-btn:hover {
-  background-color: #004d25;
-}
+       #reg-tax-section {
+        background-color: #f7faf7;
+        width: 100%;
+        padding: 20px;
+        /* Adjust padding as needed */
+        box-sizing: border-box;
+      }
+      
+      /* ================================
+             Registered Products Section Styles
+             ================================ */
+      
+      
+      /* Hide expanded containers by default */
+      .reg-expanded-container,
+      .tax-expanded-container {
+        display: none;
+      }
+      
+      
+      
+      
+      .reg-section,
+      .tax-section {
+        padding: 20px;
+      }
+      
+      .reg-card-container,
+      .tax-card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+      
+      .reg-card,
+      .tax-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s ease, transform 0.5s ease;
+      }
+      
+      .reg-card:hover,
+      .tax-card:hover {
+        transform: scale(1.05);
+      }
+      
+      .reg-expanded-container,
+      .tax-expanded-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        margin: 20px auto;
+        padding: 30px;
+        text-align: left;
+        animation: reg-fadeInExpand 0.5s ease forwards;
+      }
+      
+      @keyframes reg-fadeInExpand {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      .reg-fade-out,
+      .tax-fade-out {
+        animation: reg-fadeOutShrink 0.3s ease forwards;
+      }
+      
+      @keyframes reg-fadeOutShrink {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      
+        100% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      }
+      
+      @keyframes tax-fadeInExpand {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes tax-fadeOutShrink {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      
+        100% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      }
+      
+      
+      
+      .back-btn,
+      .blog-back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #006733;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        text-align: center;
+      }
+      
+      .back-btn:hover,
+      .blog-back-btn:hover {
+        background-color: #004d25;
+      }
 
 
 
@@ -1589,6 +1562,8 @@ svg {
   max-width: 550px;
   width: 100%;
   background: white;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .formbold-input-flex {
@@ -1597,87 +1572,31 @@ svg {
   margin-bottom: 15px;
 }
 
-.formbold-input-flex>div {
-  width: 50%;
+/* flex:1 makes each column share available space;
+   if there’s only one child, it fills 100% */
+.formbold-input-flex > div {
+  flex: 1;
 }
 
-.formbold-input-radio-wrapper {
-  margin-bottom: 28px;
-}
-
-.formbold-radio-flex {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.formbold-radio-label {
-  font-size: 14px;
-  line-height: 24px;
-  color: #07074D;
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.formbold-input-radio {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.formbold-radio-checkmark {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #FFFFFF;
-  border: 1px solid #DDE3EC;
-  border-radius: 50%;
-}
-
-.formbold-radio-label .formbold-input-radio:checked~.formbold-radio-checkmark {
-  background-color: #6A64F1;
-}
-
-.formbold-radio-checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.formbold-radio-label .formbold-input-radio:checked~.formbold-radio-checkmark:after {
+.formbold-form-label {
   display: block;
-}
-
-.formbold-radio-label .formbold-radio-checkmark:after {
-  top: 50%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  transform: translate(-50%, -50%);
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #07074D;
 }
 
 .formbold-form-input {
   width: 100%;
   padding: 13px 22px;
-  border-radius: 5px;
   border: 1px solid #DDE3EC;
-  background: #FFFFFF;
-  font-weight: 500;
+  border-radius: 5px;
   font-size: 16px;
+  font-weight: 500;
   color: #07074D;
+  background: #FFFFFF;
   outline: none;
   resize: none;
 }
-
 
 .formbold-form-input::placeholder {
   color: #536387;
@@ -1688,30 +1607,21 @@ svg {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
 }
 
-.formbold-form-label {
-  color: #07074D;
-  font-size: 14px;
-  line-height: 24px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-
 .formbold-btn {
-  text-align: center;
+  display: block;
   width: 100%;
+  padding: 14px 0;
+  margin-top: 25px;
   font-size: 16px;
-  border-radius: 5px;
-  padding: 14px 25px;
-  border: none;
   font-weight: 500;
   background-color: #006733;
-  color: white;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 25px;
 }
 
 .formbold-btn:hover {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-  backround-color: #004d25
+  background-color: #004d25;
 }

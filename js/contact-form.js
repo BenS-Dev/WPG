@@ -1,4 +1,4 @@
-src="https://www.google.com/recaptcha/api.js";
+src = "https://www.google.com/recaptcha/api.js";
 
 // Function to format phone number
 function formatPhoneNumber(phoneInput) {
@@ -53,3 +53,41 @@ function timestamp() {
   }
 }
 setInterval(timestamp, 500);
+
+
+
+
+
+
+
+
+
+
+
+const form = document.querySelector('form');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = new URLSearchParams(new FormData(form));
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors' // Salesforce WebToCase supports no-cors POST
+    });
+    form.innerHTML = `
+<h2>Thanks for reaching out!</h2>
+<br><br>
+<p>
+  Your inquiry has been successfully submitted. A member of our team will review the details and be in touch shortly to discuss the next steps.<br><br>
+  We appreciate your trust in us and are committed to providing you with timely, personalized support.<br><br>
+  If you need immediate assistance, please call us at <br><br>
+  <strong>(204) 989-7676</strong>.
+</p>
+
+    `;
+  } catch (err) {
+    console.error(err);
+    alert('Oops—something went wrong. Please try again.');
+  }
+});
+

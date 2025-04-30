@@ -62,41 +62,69 @@
       <!-- Learn More: https://formbold.com -->
       <div class="formbold-form-wrapper">
         <form
-          action="https://wpgthewealthplanninggroup--escheduler.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDH000001ORUm"
-          method="POST">
-          <input type=hidden name="orgid" value="00DDH000001ORUm">
-          <input type=hidden name="retURL" value="http://wpg-plan.com">
-
-
-            <div class="formbold-input-flex">
-            <div>
-              <label for="name" class="formbold-form-label"> Full Name </label>
-              <input type="text" name="name" id="name" maxlength="80" placeholder="John Smith" class="formbold-form-input" />
-            </div>
-
-          </div>
-
-          <div class="formbold-input-flex">
-            <div>
-              <label for="email" class="formbold-form-label"> Email </label>
-              <input type="email" name="email" id="email" maxlength="80" placeholder="jhon@mail.com"
-                class="formbold-form-input" />
-            </div>
-            <div>
-              <label for="phone" class="formbold-form-label"> Phone </label>
-              <input type="text" name="phone" id="phone" maxlength="40" placeholder="(204) 111-1111"
-                class="formbold-form-input" />
-            </div>
-          </div>
-
-
+        action="https://wpgthewealthplanninggroup--escheduler.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDH000001ORUm"
+        method="POST">
+      
+        <input type="hidden" name="orgid" value="00DDH000001ORUm">
+       
+      
+        <div class="formbold-input-flex">
           <div>
-            <label for="description" class="formbold-form-label"> Description </label>
-            <textarea rows="6" name="description" id="description" placeholder="How can we help?"
-              class="formbold-form-input"></textarea>
+            <label for="name" class="formbold-form-label"> Full Name </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              maxlength="80"
+              placeholder="John Smith"
+              class="formbold-form-input"
+              required
+            />
           </div>
-          <input class="formbold-btn" type="submit" name="submit">
-        </form>
+        </div>
+      
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Email </label>
+            <input
+              type="email"
+              name="SuppliedEmail"
+              id="email"
+              maxlength="80"
+              placeholder="john@email.com"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+          <div>
+            <label for="phone" class="formbold-form-label"> Phone </label>
+            <input
+              type="text"
+              name="SuppliedPhone"
+              id="phone"
+              maxlength="40"
+              placeholder="(204) 111-1111"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+        </div>
+      
+        <div>
+          <label for="description" class="formbold-form-label"> Description </label>
+          <textarea
+            rows="6"
+            name="description"
+            id="description"
+            placeholder="How can we help?"
+            class="formbold-form-input"
+            required
+          ></textarea>
+        </div>
+      
+        <button class="formbold-btn" type="submit">Submit</button>
+      </form>
+      
       </div>
     </div>
   </section>
