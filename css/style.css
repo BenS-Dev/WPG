@@ -57,6 +57,7 @@ header.show {
 /* Logo */
 .header-logo img {
   height: 40px;
+  cursor: pointer;
 }
 
 /* ----------------------------------------------------
@@ -177,6 +178,31 @@ header.show {
   }
 }
 
+
+/* ----------------------------------------------------
+   Phone number (desktop only)
+---------------------------------------------------- */
+.header-phone {
+  display: block;               /* show by default (desktop) */
+  font-weight: 500;
+  margin-left: 20px;            /* spacing from nav */
+}
+
+.header-phone a {
+  color: #333;
+  text-decoration: none;
+}
+
+.header-phone a:hover {
+  text-decoration: underline;
+}
+
+/* hide on mobile */
+@media (max-width: 768px) {
+  .header-phone {
+    display: none;
+  }
+}
 
 /* ----------------------------------------------------
    Hero Section
