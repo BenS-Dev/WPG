@@ -20,7 +20,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images\WPG-Logo-Icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images\WPG-Logo-Icon.png">
 
+
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
 </head>
+
+
 
 <body>
   <!-- =========================================
@@ -111,7 +119,7 @@
             <label for="email" class="formbold-form-label"> Email </label>
             <input
               type="email"
-              name="SuppliedEmail"
+              name="email"
               id="email"
               maxlength="80"
               placeholder="john@email.com"
@@ -123,7 +131,7 @@
             <label for="phone" class="formbold-form-label"> Phone </label>
             <input
               type="text"
-              name="SuppliedPhone"
+              name="phone"
               id="phone"
               maxlength="40"
               placeholder="(204) 111-1111"
@@ -144,7 +152,11 @@
             required
           ></textarea>
         </div>
-      
+
+<!-- Hidden prioity field defaulted to low-->
+<input type=hidden name="priority" id="priority" value="High">
+
+       <!-- <div class="g-recaptcha" data-sitekey="6LeTVi8rAAAAALG-r2Thlqd5r0S8Y2Atmm_6YA4n"></div><br>-->
         <button class="formbold-btn" type="submit">Submit</button>
       </form>
       

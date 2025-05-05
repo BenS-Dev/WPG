@@ -1,5 +1,3 @@
-src = "https://www.google.com/recaptcha/api.js";
-
 // Function to format phone number
 function formatPhoneNumber(phoneInput) {
   const phoneValue = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
@@ -43,19 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   emailInput.addEventListener("blur", () => validateEmail(emailInput));
 });
 
-// Timestamp function for reCAPTCHA
-function timestamp() {
-  const response = document.getElementById("g-recaptcha-response");
-  if (response == null || response.value.trim() == "") {
-    const elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-    elems["ts"] = JSON.stringify(new Date().getTime());
-    document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-  }
-}
-setInterval(timestamp, 500);
 
 
-
+// Function to handle form submission
 
 
 
