@@ -23,9 +23,9 @@
 
 
   <script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-</script>
+  <script>
+   function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+  </script>
 </head>
 
 
@@ -79,10 +79,10 @@
       <!-- Learn More: https://formbold.com -->
       <div class="formbold-form-wrapper">
         <form
-        action="https://wpgthewealthplanninggroup--escheduler.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDH000001ORUm"
-        method="POST">
-      
-        <input type="hidden" name="orgid" value="00DDH000001ORUm">
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D5f000009kgm2" method="POST">
+
+<input type=hidden name='captcha_settings' value='{"keyname":"WPG_Website","fallback":"true","orgId":"00D5f000009kgm2","ts":""}'>
+<input type=hidden name="orgid" value="00D5f000009kgm2">
        
       
         <div class="formbold-input-flex">
