@@ -211,7 +211,7 @@ header.show {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('../images/Happy Family.jpg') no-repeat center center / cover;
+  background: url('../images/Happy%20Family.jpg') no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
