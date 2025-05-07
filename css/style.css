@@ -1623,6 +1623,19 @@ svg {
   outline: none;
   resize: none;
 }
+/* Responsive: stack inputs on small screens */
+@media (max-width: 600px) {
+  .formbold-input-flex {
+    /* switch from row to column */
+    flex-direction: column;
+    /* optional: tighten up vertical spacing */
+    gap: 12px;
+  }
+  .formbold-input-flex > div {
+    /* make each child span the full width */
+    flex: 1 1 100%;
+  }
+}
 
 .formbold-form-input::placeholder {
   color: #536387;
