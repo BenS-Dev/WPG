@@ -1007,20 +1007,18 @@ iframe {
 
 
 
-/* ----------------------------------------------------
-   Providers Grid Section (Modern)
----------------------------------------------------- */
+/* === Providers Grid === */
 .providers {
-  background-color: #fff;
+  background: #fff;
   padding: 60px 20px;
 }
 
-.providers-heading {
+.providers .header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.providers-heading h2 {
+.providers .header h2 {
   font-size: 2.25rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -1028,72 +1026,69 @@ iframe {
   margin: 0;
 }
 
-.divider {
+.providers .divider {
   width: 80px;
   height: 4px;
-  background-color: #006733;
+  background: #006733;
   margin: 16px auto 0;
 }
 
-.providers-grid {
+.providers .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
-.provider-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+.providers .item {
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: 
-    transform 0.3s ease, 
-    box-shadow 0.3s ease;
-  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease;
+  text-align: center;
 }
 
-.provider-card img {
+.providers .item a {
+  display: block;
+}
+
+.providers .item img {
   width: 140px;
   height: 70px;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.6;
-  transition: 
-    filter 0.3s ease, 
-    opacity 0.3s ease, 
-    transform 0.3s ease;
+  opacity: .6;
+  transition: filter .3s ease, opacity .3s ease, transform .3s ease;
 }
 
-.provider-card:hover {
+.providers .item:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.provider-card:hover img {
-  filter: grayscale(0%);
+.providers .item:hover img {
+  filter: none;
   opacity: 1;
   transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .providers-heading h2 {
+  .providers .header h2 {
     font-size: 1.75rem;
   }
-  .provider-card {
+  .providers .item {
     padding: 16px;
   }
-  .provider-card img {
+  .providers .item img {
     width: 120px;
     height: 60px;
   }
 }
+
 
 
 
