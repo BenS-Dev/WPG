@@ -2,31 +2,54 @@ document.addEventListener("DOMContentLoaded", function () {
     const blogCards = document.querySelectorAll(".blog-card");
     const blogOverlay = document.querySelector(".blog-overlay");
 
+    // Helper to expand a card
+    function expandCard(card) {
+        if (card.classList.contains("blog-expanded") || card.isClosing) return;
+        if (card.hasAttribute("data-link")) {
+            const url = card.getAttribute("data-link");
+            window.open(url, "_blank", "noopener,noreferrer");
+            return;
+        }
+        card.classList.add("blog-expanded");
+        blogOverlay.classList.add("blog-overlay-active");
+        const content = card.querySelector(".blog-content");
+        if (content) {
+            content.style.maxHeight = "1000px";
+            content.style.opacity = "1";
+        }
+    }
+
+    // Helper to collapse a card
+    function collapseCard(card) {
+        if (!card.classList.contains("blog-expanded") || card.isClosing) return;
+        const content = card.querySelector(".blog-content");
+        if (content) {
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+        }
+        card.isClosing = true;
+        card.classList.add("blog-collapsing");
+        // Listen for transition end to finish collapse
+        const onTransitionEnd = () => {
+            card.classList.remove("blog-expanded", "blog-collapsing");
+            blogOverlay.classList.remove("blog-overlay-active");
+            card.isClosing = false;
+            if (content) content.removeEventListener("transitionend", onTransitionEnd);
+        };
+        if (content) {
+            content.addEventListener("transitionend", onTransitionEnd);
+        } else {
+            // Fallback if no content
+            setTimeout(onTransitionEnd, 600);
+        }
+    }
+
     blogCards.forEach((card) => {
-        let isClosing = false;
+        card.isClosing = false;
 
         card.addEventListener("click", function (e) {
-            // Don’t trigger if clicking the back button
             if (e.target.classList.contains("blog-back-btn")) return;
-
-            // Prevent reopening while collapsing
-            if (isClosing) return;
-
-            // If not already expanded…
-            if (!card.classList.contains("blog-expanded")) {
-                // If there’s a data-link, open it in a new tab
-                if (card.hasAttribute("data-link")) {
-                    const url = card.getAttribute("data-link");
-                    window.open(url, "_blank", "noopener,noreferrer");
-                    return;
-                }
-                // Otherwise expand inline
-                card.classList.add("blog-expanded");
-                blogOverlay.classList.add("blog-overlay-active");
-                const content = card.querySelector(".blog-content");
-                content.style.maxHeight = "1000px";
-                content.style.opacity = "1";
-            }
+            expandCard(card);
         });
 
         // Back button to collapse
@@ -34,16 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         backButtons.forEach((btn) => {
             btn.addEventListener("click", function (e) {
                 e.stopPropagation();
-                const content = card.querySelector(".blog-content");
-                content.style.maxHeight = "0";
-                content.style.opacity = "0";
-                isClosing = true;
-                card.classList.add("blog-collapsing");
-                setTimeout(() => {
-                    card.classList.remove("blog-expanded", "blog-collapsing");
-                    blogOverlay.classList.remove("blog-overlay-active");
-                    isClosing = false;
-                }, 600);
+                collapseCard(card);
             });
         });
     });
@@ -51,27 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Overlay click collapses expanded card
     blogOverlay.addEventListener("click", function () {
         const expandedCard = document.querySelector(".blog-card.blog-expanded");
-        if (!expandedCard) return;
-
-        const content = expandedCard.querySelector(".blog-content");
-        content.style.maxHeight = "0";
-        content.style.opacity = "0";
-        // note: reuse isClosing from outer scope by redefining here
-        let isClosing = true;
-        expandedCard.classList.add("blog-collapsing");
-        setTimeout(() => {
-            expandedCard.classList.remove("blog-expanded", "blog-collapsing");
-            blogOverlay.classList.remove("blog-overlay-active");
-            isClosing = false;
-        }, 600);
+        if (expandedCard) {
+            collapseCard(expandedCard);
+        }
     });
-});
 
-// Search & filter functionality unchanged…
-document.addEventListener("DOMContentLoaded", function () {
+    // --- Search & filter functionality ---
     const searchInput = document.getElementById('search');
     const filterBtn = document.querySelector('.filter-btn');
     const filterOptions = document.querySelector('.filter-options');
+    const blogContainer = document.querySelector('.blog-container');
     let currentFilter = "all";
 
     const filterImages = {
@@ -80,22 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "wpg": "images/WPG-Logo-Icon.png"
     };
 
-    filterBtn.addEventListener("click", function (e) {
+    filterBtn?.addEventListener("click", function (e) {
         e.stopPropagation();
-        filterOptions.classList.toggle("active");
+        filterOptions?.classList.toggle("active");
     });
 
-    document.querySelectorAll('.filter-option').forEach(option => {
-        option.addEventListener("click", function () {
-            currentFilter = this.dataset.filter;
-            filterBtn.innerHTML = `<img src="${filterImages[currentFilter]}" alt="${currentFilter} icon" />`;
-            filterOptions.classList.remove("active");
-            updateArticles();
-        });
+    filterOptions?.addEventListener("click", function (e) {
+        const option = e.target.closest('.filter-option');
+        if (!option) return;
+        currentFilter = option.dataset.filter;
+        filterBtn.innerHTML = `<img src="${filterImages[currentFilter]}" alt="${currentFilter} icon" />`;
+        filterOptions.classList.remove("active");
+        updateArticles();
     });
 
     function updateArticles() {
-        const query = searchInput.value.toLowerCase();
+        const query = (searchInput?.value || "").toLowerCase();
         let anyVisible = false;
         document.querySelectorAll('.blog-card').forEach(article => {
             const title = article.querySelector('.blog-title')?.textContent.toLowerCase() || "";
@@ -110,10 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 article.style.display = "none";
             }
         });
-        document.querySelector('.blog-container').style.justifyContent = anyVisible ? "" : "center";
+        if (blogContainer) {
+            blogContainer.style.justifyContent = anyVisible ? "" : "center";
+        }
     }
 
-    searchInput.addEventListener('input', updateArticles);
+    searchInput?.addEventListener('input', updateArticles);
 
     document.addEventListener("click", function (e) {
         if (!filterBtn.contains(e.target) && !filterOptions.contains(e.target)) {

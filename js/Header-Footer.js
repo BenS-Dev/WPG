@@ -1,13 +1,14 @@
 /*Header*/
-var lastScroll = 0;
+const header = document.querySelector('header');
+let lastScroll = 0;
 window.addEventListener('scroll', function() {
   const currentScroll = window.pageYOffset;
-  
+
   // Always show header when at the very top
   if (currentScroll <= 0 || currentScroll < lastScroll) {
-    header.classList.add('show');
+    header && header.classList.add('show');
   } else {
-    header.classList.remove('show');
+    header && header.classList.remove('show');
   }
   lastScroll = currentScroll;
 });
@@ -16,7 +17,6 @@ window.addEventListener('scroll', function() {
 
 
 /*footer*/
-
 document.addEventListener("DOMContentLoaded", function() {
   // If the browser does not support lazy-loading on iframes,
   // remove the 'loading' attribute so the iframe loads normally.
